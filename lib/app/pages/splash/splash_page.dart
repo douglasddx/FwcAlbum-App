@@ -1,7 +1,10 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:fwc_album_app/app/core/ui/helpers/loader.dart';
 import 'package:fwc_album_app/app/core/ui/helpers/messages.dart';
 import 'package:fwc_album_app/app/core/ui/styles/button_styles.dart';
+import 'package:fwc_album_app/app/core/ui/styles/colors_app.dart';
 import 'package:fwc_album_app/app/core/ui/styles/text_styles.dart';
 import 'package:fwc_album_app/app/core/ui/widgets/button.dart';
 import 'package:fwc_album_app/app/core/ui/widgets/rounded_button.dart';
@@ -18,56 +21,52 @@ class _SplashPageState extends State<SplashPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Splash Page',
+      backgroundColor: ColorsApp.i.primary,
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/background_splash.png'),
+            fit: BoxFit.cover,
+          ),
         ),
-      ),
-      body: Center(
-        child: Column(children: [
-          ElevatedButton(
-            onPressed: () async {
-              showLoader();
-              await Future.delayed(
-                const Duration(
-                  seconds: 3,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * .08,
                 ),
-              );
-              hideLoader();
-            },
-            style: ButtonStyles.i.primaryButton,
-            child: const Text('Salvar'),
-          ),
-          OutlinedButton(
-            onPressed: () {
-              showError('Erro no botão outline!');
-            },
-            style: ButtonStyles.i.primaryOutlineButton,
-            child: const Text('Salvar'),
-          ),
-          const TextField(),
-          Button(
-            label: 'Salvar',
-            onPressed: () {
-              showInfo('Info no botão outline');
-            },
-            style: ButtonStyles.i.primaryOutlineButton,
-            labelStyle: TextStyles.i.textPrimaryFontBold,
-            outline: true,
-          ),
-          Button.primiry(
-            width: MediaQuery.of(context).size.width * .95,
-            height: 40,
-            label: 'Salvar',
-            onPressed: () {
-              showSuccess('Success no botão Salvar!');
-            },
-          ),
-          RoundedButton(
-            icon: Icons.add,
-            onPressed: () {},
-          )
-        ]),
+                child: Image.asset(
+                  'assets/images/fifa_logo.png',
+                  height: MediaQuery.of(context).size.height * .25,
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).size.height * .19),
+                child: Button(
+                  width: MediaQuery.of(context).size.width * .9,
+                  onPressed: () {},
+                  style: ButtonStyles.i.yellowButton,
+                  labelStyle:
+                      TextStyles.i.textSecondaryFontExtraBoldPrimiryColor,
+                  label: 'Acessar',
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: Image.asset('assets/images/bandeiras.png'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
