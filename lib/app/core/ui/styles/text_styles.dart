@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:fwc_album_app/app/core/ui/styles/colors_app.dart';
 
 class TextStyles {
@@ -42,11 +42,22 @@ class TextStyles {
   TextStyle get textSecondaryFontExtraBold =>
       TextStyle(fontWeight: FontWeight.w800, fontFamily: secondaryFont);
 
+  // outras
   TextStyle get labelTextField =>
       textPrimaryFontRegular.copyWith(color: ColorsApp.i.grayDark);
 
   TextStyle get textSecondaryFontExtraBoldPrimiryColor =>
       textSecondaryFontExtraBold.copyWith(color: ColorsApp.i.primary);
+
+  TextStyle get titleWhite => textPrimaryFontBold.copyWith(
+        fontSize: 22,
+        color: Colors.white,
+      );
+
+  TextStyle get titleBlack => textPrimaryFontBold.copyWith(
+        fontSize: 22,
+        color: Colors.black,
+      );
 }
 
 extension TextStylesExtensions on BuildContext {

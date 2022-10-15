@@ -29,8 +29,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  top_snackbar_flutter: ^2.1.1
-  loading_animation_widget: ^1.2.0+3
+  top_snackbar_flutter: ^2.1.1        # package para emissão de alert's
+  loading_animation_widget: ^1.2.0+3  # package para loadings
+  flutter_getit: ^1.2.1               # package para gerenciamento de dependências
+  flutter_dotenv: ^5.0.2              # package para gerenciar arquivo de ambiente
+  dio: ^4.0.6                         # package client http
+  validatorless: ^1.2.3               # package para validação em formulários
+  shared_preferences: ^2.0.15         # package de salvar info local
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -61,6 +66,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - .env
     - assets/images/
     - assets/images/flags/
 
