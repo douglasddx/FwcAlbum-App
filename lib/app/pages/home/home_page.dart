@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_getit/flutter_getit.dart';
+import 'package:fwc_album_app/app/core/rest/custom_dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,13 +17,13 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
-            final sp = await SharedPreferences.getInstance();
-            sp.clear();
-            // ignore: use_build_context_synchronously
-            Navigator.of(context)
-                .pushNamedAndRemoveUntil('/', (route) => false);
+            context.get<CustomDio>().auth().get('/api/me');
+            // final sp = await SharedPreferences.getInstance();
+            // sp.clear();
+            // Navigator.of(context)
+            //     .pushNamedAndRemoveUntil('/', (route) => false);
           },
-          child: const Text('Logout'),
+          child: const Text('Testando auth'),
         ),
       ),
     );

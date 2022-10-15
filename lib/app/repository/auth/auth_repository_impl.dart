@@ -13,14 +13,15 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl({required this.dio});
 
   @override
-  Future<String> login(
-      {required String email, required String password}) async {
+  Future<String> login({
+    required String email,
+    required String password,
+  }) async {
     try {
       final result = await dio.post('/api/auth', data: {
         'email': email,
         'password': password,
       });
-
       final accessToken = result.data['access_token'];
 
       if (accessToken == null) {
