@@ -11,8 +11,10 @@ class LoginServiceImpl implements LoginService {
   });
 
   @override
-  Future<void> execute(
-      {required String email, required String password}) async {
+  Future<void> execute({
+    required String email,
+    required String password,
+  }) async {
     final accessToken =
         await authRepository.login(email: email, password: password);
     final sp = await SharedPreferences.getInstance();
