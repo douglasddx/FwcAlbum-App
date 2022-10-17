@@ -18,7 +18,9 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.6 <3.0.0"
+  sdk: ">=2.18.1 <3.0.0"
+  # Aumentei a versão para corrigir o problema do flutter_awesome_select
+  # sdk: ">=2.17.6 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -36,6 +38,7 @@ dependencies:
   dio: ^4.0.6                         # package client http
   validatorless: ^1.2.3               # package para validação em formulários
   shared_preferences: ^2.0.15         # package de salvar info local
+  flutter_awesome_select: ^6.5.0      # package para buttonsheet
 
 
   # The following adds the Cupertino Icons font to your application.
