@@ -6,4 +6,5 @@ abstract class HomePresenter extends FwcPresenter<HomeView> {
   // Métodos de ação - event
   Future<void> getUserData();
   Future<void> logout();
+  void refresh();
 }

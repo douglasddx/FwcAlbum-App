@@ -31,5 +31,10 @@ class HomePresenterImpl implements HomePresenter {
   }
 
   @override
+  void refresh() async {
+    getUserData();
+  }
+
+  @override
   set view(HomeView view) => _view = view;
 }

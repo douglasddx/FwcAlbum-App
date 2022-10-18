@@ -70,6 +70,7 @@ class StickerGroup extends StatelessWidget {
               final stickerList = group.stickers
                   .where((sticker) => sticker.stickerNumber == stickerNumber);
               final sticker = stickerList.isNotEmpty ? stickerList.first : null;
+
               final stickerWidget = _Sticker(
                 stickerNumber: stickerNumber,
                 sticker: sticker,
@@ -77,9 +78,9 @@ class StickerGroup extends StatelessWidget {
                 countryCode: group.countryCode,
               );
 
-              if (statusFilter == 'all')
+              if (statusFilter == 'all') {
                 return stickerWidget;
-              else if (statusFilter == 'missing') {
+              } else if (statusFilter == 'missing') {
                 if (sticker == null) return stickerWidget;
               } else if (statusFilter == 'repeated') {
                 if (sticker != null && sticker.duplicate > 0) {
