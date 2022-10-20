@@ -32,7 +32,7 @@ class UserModel {
       'email': email,
       'total_album': totalAlbum,
       'total_strickers': totalStrickers,
-      'total_duplicate': totalDuplicate,
+      'total_duplicates': totalDuplicate,
       'total_complete': totalComplete,
       'total_complete_percent': totalCompletePercent,
     };
@@ -45,7 +45,7 @@ class UserModel {
       email: map['email'] ?? '',
       totalAlbum: map['total_album']?.toInt() ?? 0,
       totalStrickers: map['total_stickers']?.toInt() ?? 0,
-      totalDuplicate: map['total_duplicate']?.toInt() ?? 0,
+      totalDuplicate: map['total_duplicates']?.toInt() ?? 0,
       totalComplete: map['total_complete']?.toInt() ?? 0,
       totalCompletePercent: map['total_complete_percent']?.toInt() ?? 0,
     );
