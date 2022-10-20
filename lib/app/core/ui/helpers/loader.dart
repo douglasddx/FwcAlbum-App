@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fwc_album_app/app/core/ui/styles/colors_app.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
 mixin Loader<T extends StatefulWidget> on State<T> {

@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_getit/flutter_getit.dart';
 import 'package:fwc_album_app/app/core/ui/global/global_context.dart';
-import 'package:fwc_album_app/app/core/ui/global/global_context_impl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthIntercptor extends Interceptor {
